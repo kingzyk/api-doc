@@ -80,7 +80,7 @@ POST
 | 参数名称  | 类型        | 是否必返 | 说明                                                         |
 | --------- | ----------- | -------- | ------------------------------------------------------------ |
 | requestId | string      | 是        | 请求流水号                                                   |
-| serviceId | string      | 是        | POST_TEXT：文本，POST_IMG：图片，POST_AUDIO：音频，POST_VIDEO：视频 |
+| serviceId | string      | 是        | POST_TEXT：文本，POST_IMG：图片，POST_AUDIO：音频，POST_VIDEO：视频 POST_MEDIA：融媒体|
 | result    | json_object | 是        | 人审结果                                                     |
 | data      | json_object | 是        | 请求数据内容                                                 |
 
@@ -90,6 +90,7 @@ POST
 | ----------- | ----------- | -------- | ------------------------------------------------------------ |
 | operation   | int         | 是        | 人审结果1：通过，2：不通过                                     |
 | description | string      | 否        | 风险原因，支持客户自定义二级原因配置；若存在二级原因，则通过“/”进行拼接，例如：色情/露点 |
+| descriptions | array      | 否        | 风险原因数组，可后台开启，开启后返回多个原因 例如： ["色情/露点","违禁"] |
 | tips        | string      | 否        | 用户侧显示文案；用于用户端反馈                             |
 | evidences   | json_object | 否        | 证据信息（音频/视频返回）                                    |
 
